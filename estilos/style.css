@@ -7,6 +7,8 @@
 }
 
 body {
+    width: 100vw;
+    height: 100vh;
     background-image: url('../imagens/imagem-base1.jpg');
     background-size: cover; /* para cobrir todo o elemento */
     background-repeat: no-repeat; /* para não repetir a imagem */
@@ -46,9 +48,19 @@ img{
     color: white;
     text-align: center;
     font-size: 22px;
+    transition: background-color 0.3s;
 }
 
-.botaoTamanho3{
+.botaoTamanho1:hover {
+    background-color: #333; /* Nova cor de fundo ao passar o mouse sobre o botão */
+}
+
+.botaoTamanho1:active {
+    background-color: #000; /* Nova cor de fundo quando o botão é clicado */
+    transform: scale(0.95); /* Diminuir o tamanho do botão ligeiramente durante o clique */
+}
+
+.botaoTamanho3 {
     display: block;
     width: 144px;
     height: 26px;
@@ -60,6 +72,16 @@ img{
     border: none;
     font-size: 12px;
     text-align: center;
+    transition: background-color 0.3s; /* Adicione uma transição para suavizar a mudança de cor */
+}
+
+.botaoTamanho3:hover {
+    background-color: rgba(187, 187, 187, 0.8); /* Nova cor de fundo ao passar o mouse sobre o botão */
+}
+
+.botaoTamanho3:active {
+    background-color: rgba(217, 217, 217, 0.8); /* Retorna a cor de fundo original quando o botão é clicado */
+    transform: scale(0.95); /* Diminuir o tamanho do botão ligeiramente durante o clique */
 }
 
 
@@ -73,6 +95,7 @@ form{
     align-items: center;
     gap: 5px;
 }
+
 .entrar{
     width: 282px;
     height: 44px;
@@ -83,7 +106,7 @@ form{
     border: none;
 }
 
-.botaoTamanho2{
+.botaoTamanho2 {
     width: 170px;
     height: 44px;
     background-color: black;
@@ -92,4 +115,56 @@ form{
     color: white;
     text-align: center;
     font-size: 18px;
+    transition: background-color 0.3s; /* Adicione uma transição para suavizar a mudança de cor */
+}
+
+.botaoTamanho2:hover {
+    background-color: #333; /* Nova cor de fundo ao passar o mouse sobre o botão */
+}
+
+.botaoTamanho2:active {
+    background-color: #000; /* Nova cor de fundo quando o botão é clicado */
+    transform: scale(0.95); /* Diminuir o tamanho do botão ligeiramente durante o clique */
+}
+
+/* AGENDAMENTO */
+
+.quadradoBase2 {
+    width: 323px;
+    height: 360px;
+    margin: auto;
+    margin-top: 80px;
+    background-color: rgba(219, 219, 219, 0.8);
+    border-radius: 22px;
+    gap: 30px;
+}
+
+.agendamento{
+    padding-top: 30px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinhar verticalmente */
+    align-items: center;
+    gap: 5px;
+}
+
+.agendar{
+    width: 282px;
+    height: 44px;
+    margin: auto;
+    border-radius: 22px;
+    font-size: 18px;
+    text-indent: 15px;
+    border: none;
+    color: rgba(99, 99, 99, 1);
+}
+
+#data{
+    text-indent: 10px;
+    font-size: 18px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    text-indent: -10px;
 }
