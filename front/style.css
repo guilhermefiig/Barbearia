@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url('../imagens/imagem-base1.jpg');
+    background-size: cover; /* para cobrir todo o elemento */
+    background-repeat: no-repeat; /* para não repetir a imagem */
+    background-attachment: fixed;
+    background-position: center center; /* para centralizar a imagem */
+}
+
+img{
+    width: 300px;
+    margin: auto;
+    margin-top: 75px;
+    display: block;
+}
+
+/* TELA PRINCIPAL */
+
+.quadradoBase {
+    width: 323px;
+    height: 293px;
+    margin: auto;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinhar verticalmente */
+    align-items: center; /* Alinhar horizontalmente */
+    background-color: rgba(219, 219, 219, 0.8);
+    border-radius: 22px;
+    gap: 30px;
+}
+
+.botaoTamanho1 {
+    width: 200px;
+    height: 56.13px;
+    background-color: black;
+    border-radius: 22px;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 22px;
+}
+
+.botaoTamanho3{
+    display: block;
+    width: 144px;
+    height: 26px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: rgba(217, 217, 217, 0.8);
+    color: rgba(99, 99, 99, 1);
+    border-radius: 22px;
+    border: none;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/* LOGIN DO BARBEIRO */
+
+form{
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinhar verticalmente */
+    align-items: center;
+    gap: 5px;
+}
+.entrar{
+    width: 282px;
+    height: 44px;
+    margin: auto;
+    border-radius: 22px;
+    font-size: 18px;
+    text-indent: 15px;
+    border: none;
+}
+
+.botaoTamanho2{
+    width: 170px;
+    height: 44px;
+    background-color: black;
+    border-radius: 22px;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
