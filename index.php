@@ -11,7 +11,7 @@
     <img src="imagens/barbearia-sem-fundo.png" alt="Logo Barbearia do Claudio">
 
     <div class="quadradoBase">
-        <a href="agendar.html">
+        <a href="agendar.php">
             <button class="botaoTamanho1">Agendar</button>
         </a>
         <a href="#">
@@ -19,7 +19,7 @@
         </a>
     </div>
 
-    <a href="login.html">
+    <a href="login.php">
         <button class="botaoTamanho3">Login do barbeiro</button>
     </a>
 </body>

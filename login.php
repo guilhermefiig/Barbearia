@@ -11,14 +11,14 @@
     <img src="imagens/barbearia-sem-fundo.png" alt="Logo Barbearia do Claudio">
 
     <div class="quadradoBase">
-        <form action="#" method="post">
-            <input type="text" name="login" class="entrar" placeholder="Login">
-            <input type="password" name="senha" class="entrar" placeholder="Senha">
-            <button type="submit" class="botaoTamanho2">Entrar</button>
+        <form action="back/verificar_login.php" method="post">
+            <input type="text" name="login" class="entrar" placeholder="Login" required>
+            <input type="password" name="senha" class="entrar" placeholder="Senha" required>
+            <button type="submit" class="botaoTamanho2" onclick="return confirm('Tem certeza que deseja enviar o formulário')">Entrar</button>
         </form>
     </div>
 
-    <a href="index.html">
+    <a href="index.php">
         <div class="botaoTamanho3">Voltar</div>
     </a>
 </body>

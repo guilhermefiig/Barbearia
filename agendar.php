@@ -40,7 +40,7 @@
         </form>
     </div>
 
-    <a href="index.html">
+    <a href="index.php">
         <div class="botaoTamanho3">Voltar</div>
     </a>
 </body>
