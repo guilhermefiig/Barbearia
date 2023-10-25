@@ -12,8 +12,8 @@
 
     <div class="quadradoBase2">
         <form action="#" method="post" class="agendamento">
-            <input type="text" name="login" class="agendar" placeholder="Nome">
-            <input type="tel" name="senha" class="agendar" placeholder="Telefone">
+            <input type="text" name="nome" class="agendar" placeholder="Nome">
+            <input type="tel" name="telefone" class="agendar" placeholder="Telefone">
             <select name="escolha" class="agendar">
                 <option selected disabled>Escolha um barbeiro</option>
                 <option value="claudio">Barbeiro Cláudio</option>

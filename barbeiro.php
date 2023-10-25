@@ -11,7 +11,6 @@
     <img src="imagens/barbearia-sem-fundo.png" alt="Logo Barbearia do Claudio">
 
     <div class="quadradoBase2">
-        <h1>TESTE</h1>
         </form>
     </div>
 
