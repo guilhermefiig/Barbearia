@@ -1,5 +1,24 @@
+<?php
+
+if (isset($_POST['submit'])) {
+    $nome = $_POST['nome'];
+    $telefone = $_POST['telefone'];
+    $barbeiro = $_POST['barbeiro'];
+    $data = $_POST['data'];
+    $hora = $_POST['hora'];
+
+    include_once('conexao.php');
+
+    $result = mysqli_query($conexao, "INSERT INTO agendamentos(nome, telefone, barbeiro, data_agend, hora)
+    VALUES ('$nome', '$telefone', '$barbeiro', '$data', '$hora')");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +26,42 @@
     <link rel="shortcut icon" href="imagens/android-chrome-512x512.png" type="image/x-icon">
     <link rel="stylesheet" href="estilos/style.css">
 </head>
+
 <body>
     <img src="imagens/barbearia-sem-fundo.png" alt="Logo Barbearia do Claudio">
 
     <div class="quadradoBase2">
-        <form action="#" method="post" class="agendamento">
+        <form action="agendar.php" method="post" class="agendamento">
+
             <input type="text" name="nome" class="agendar" placeholder="Nome">
+
             <input type="tel" name="telefone" class="agendar" placeholder="Telefone">
-            <select name="escolha" class="agendar">
+
+            <select name="barbeiro" class="agendar">
                 <option selected disabled>Escolha um barbeiro</option>
                 <option value="claudio">Barbeiro Cláudio</option>
                 <option value="cleiton">Barbeiro Cleiton</option>
                 <option value="exemplo">Barbeiro Exemplo</option>
             </select>
+
             <input type="date" name="data" class="agendar" id="data">
+
             <select name="hora" class="agendar">
                 <option selected disabled>Escolha uma hora</option>
-                <option value="claudio">8h00</option>
-                <option value="claudio">9h00</option>
-                <option value="claudio">10h00</option>
-                <option value="claudio">11h00</option>
-                <option value="claudio">12h00</option>
+                <option value="8h00">8h00</option>
+                <option value="9h00">9h00</option>
+                <option value="10h00">10h00</option>
+                <option value="11h00">11h00</option>
+                <option value="12h00">12h00</option>
                 <option disabled>----------</option>
-                <option value="claudio">14h00</option>
-                <option value="claudio">15h00</option>
-                <option value="claudio">16h00</option>
-                <option value="claudio">17h00</option>
-                <option value="claudio">18h00</option>
+                <option value="14h00">14h00</option>
+                <option value="15h00">15h00</option>
+                <option value="16h00">16h00</option>
+                <option value="17h00">17h00</option>
+                <option value="18h00">18h00</option>
             </select>
 
-            <button type="submit" class="botaoTamanho2">Agendar</button>
+            <button type="submit" class="botaoTamanho2" name="submit">Agendar</button>
         </form>
     </div>
 
@@ -44,4 +69,5 @@
         <div class="botaoTamanho3">Voltar</div>
     </a>
 </body>
+
 </html>

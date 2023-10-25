@@ -1,3 +1,10 @@
+<?php
+
+include('protecao.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,11 +18,11 @@
     <img src="imagens/barbearia-sem-fundo.png" alt="Logo Barbearia do Claudio">
 
     <div class="quadradoBase2">
-        </form>
+        <h2>Bem vindo, <?php echo $_SESSION['nome'];?> </h2>
     </div>
 
-    <a href="index.php">
-        <div class="botaoTamanho3">Voltar</div>
+    <a href="sair.php">
+        <div class="botaoTamanho3">Sair da conta</div>
     </a>
 </body>
 </html>
