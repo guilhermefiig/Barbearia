@@ -1,17 +1,20 @@
 <?php
 
 if (isset($_POST['submit'])) {
-    $nome = $_POST['nome'];
-    $telefone = $_POST['telefone'];
-    $barbeiro = $_POST['barbeiro'];
-    $data = $_POST['data'];
-    $hora = $_POST['hora'];
+    $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
+    $telefone = isset($_POST['telefone']) ? $_POST['telefone'] : '';
+    $barbeiro = isset($_POST['barbeiro']) ? $_POST['barbeiro'] : '';
+    $data = isset($_POST['data']) ? $_POST['data'] : '';
+    $hora = isset($_POST['hora']) ? $_POST['hora'] : '';
+
+    // Resto do seu código...
 
     include_once('conexao.php');
 
     $result = mysqli_query($conexao, "INSERT INTO agendamentos(nome, telefone, barbeiro, data_agend, hora)
     VALUES ('$nome', '$telefone', '$barbeiro', '$data', '$hora')");
 }
+
 
 ?>
 
@@ -33,20 +36,20 @@ if (isset($_POST['submit'])) {
     <div class="quadradoBase2">
         <form action="agendar.php" method="post" class="agendamento">
 
-            <input type="text" name="nome" class="agendar" placeholder="Nome">
+            <input type="text" name="nome" class="agendar" placeholder="Nome" required>
 
-            <input type="tel" name="telefone" class="agendar" placeholder="Telefone">
+            <input type="tel" name="telefone" class="agendar" placeholder="Telefone" required>
 
-            <select name="barbeiro" class="agendar">
+            <select name="barbeiro" class="agendar" required>
                 <option selected disabled>Escolha um barbeiro</option>
                 <option value="claudio">Barbeiro Cláudio</option>
                 <option value="cleiton">Barbeiro Cleiton</option>
                 <option value="exemplo">Barbeiro Exemplo</option>
             </select>
 
-            <input type="date" name="data" class="agendar" id="data">
+            <input type="date" name="data" class="agendar" id="data" required>
 
-            <select name="hora" class="agendar">
+            <select name="hora" class="agendar" required>
                 <option selected disabled>Escolha uma hora</option>
                 <option value="8h00">8h00</option>
                 <option value="9h00">9h00</option>
@@ -61,7 +64,7 @@ if (isset($_POST['submit'])) {
                 <option value="18h00">18h00</option>
             </select>
 
-            <button type="submit" class="botaoTamanho2" name="submit">Agendar</button>
+            <button type="submit" class="botaoTamanho2" name="submit" onclick="return confirm('Tem certeza que deseja Agendar?')">Agendar</button>
         </form>
     </div>
 
