@@ -51,25 +51,42 @@ include('conexao.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="shortcut icon" href="imagens/android-chrome-512x512.png" type="image/x-icon">
-    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        function togglePasswordVisibility() {
+            var senhaInput = document.getElementById("senha");
+            var eyeIcon = document.getElementById("eye-icon");
+            if (senhaInput.type === "password") {
+                senhaInput.type = "text";
+                eyeIcon.className = "fas fa-eye-slash";
+            } else {
+                senhaInput.type = "password";
+                eyeIcon.className = "fas fa-eye";
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <img src="imagens/barbearia-sem-fundo.png" alt="Logo Barbearia do Claudio">
+    <img src="../imagens/barbearia-sem-fundo.png" alt="Logo Barbearia do Claudio">
 
     <div class="quadradoBase">
         <form action="login.php" method="post">
 
             <input type="text" name="login" class="entrar" placeholder="Login" required>
 
-            <input type="password" name="senha" class="entrar" placeholder="Senha" required>
+            <div class="password-input">
+                <input type="password" name="senha" id="senha" class="entrar" placeholder="Senha" required>
+                <i class="fas fa-eye" id="eye-icon" onclick="togglePasswordVisibility()"></i>
+            </div>
 
             <button type="submit" class="botaoTamanho2" onclick="return confirm('Tem certeza que deseja enviar o formulário')">Entrar</button>
 
         </form>
     </div>
 
-    <a href="index.php">
+    <a href="../index.php">
         <div class="botaoTamanho3">Voltar</div>
     </a>
 </body>

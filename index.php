@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barbearia do Claudio</title>
     <link rel="shortcut icon" href="imagens/android-chrome-512x512.png" type="image/x-icon">
-    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <img src="imagens/barbearia-sem-fundo.png" alt="Logo Barbearia do Claudio">
 
     <div class="quadradoBase">
-        <a href="agendar.php">
+        <a href="php/agendar.php">
             <button class="botaoTamanho1">Agendar</button>
         </a>
         <a href="#">
@@ -21,7 +21,7 @@
         </a>
     </div>
 
-    <a href="login.php">
+    <a href="php/login.php">
         <button class="botaoTamanho3">Login do barbeiro</button>
     </a>
 </body>

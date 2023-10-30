@@ -24,11 +24,11 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar</title>
     <link rel="shortcut icon" href="imagens/android-chrome-512x512.png" type="image/x-icon">
-    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-    <img src="imagens/barbearia-sem-fundo.png" alt="Logo Barbearia do Claudio">
+    <img src="../imagens/barbearia-sem-fundo.png" alt="Logo Barbearia do Claudio">
 
 
     <div class="quadradoBase2">
@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) {
         </form>
     </div>
 
-    <a href="index.php">
+    <a href="../index.php">
         <div class="botaoTamanho3">Voltar</div>
     </a>
 
