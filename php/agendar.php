@@ -9,8 +9,27 @@ if (isset($_POST['submit'])) {
 
     include_once('conexao.php');
 
-    $result = mysqli_query($conexao, "INSERT INTO agendamentos(nome, telefone, barbeiro, data_agend, hora)
+    if($barbeiro == 'claudio'){
+
+        $result = mysqli_query($conexao, "INSERT INTO agendamentos(nome, telefone, barbeiro, data_agend, hora)
     VALUES ('$nome', '$telefone', '$barbeiro', '$data', '$hora')");
+
+    }
+
+    if($barbeiro == 'cleiton'){
+
+        $result = mysqli_query($conexao, "INSERT INTO agendamentos2(nome, telefone, barbeiro, data_agend, hora)
+    VALUES ('$nome', '$telefone', '$barbeiro', '$data', '$hora')");
+    
+    }
+    
+
+    if($barbeiro == 'exemplo'){
+
+        $result = mysqli_query($conexao, "INSERT INTO agendamentos3(nome, telefone, barbeiro, data_agend, hora)
+    VALUES ('$nome', '$telefone', '$barbeiro', '$data', '$hora')");
+    
+    }
 }
 
 ?>
@@ -24,7 +43,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar</title>
     <link rel="shortcut icon" href="imagens/android-chrome-512x512.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>

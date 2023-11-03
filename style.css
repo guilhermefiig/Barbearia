@@ -9,7 +9,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    background-image: url('../imagens/imagem-base1.jpg');
+    background-image: url('imagens/imagem-base1.jpg');
     background-size: cover; /* para cobrir todo o elemento */
     background-repeat: no-repeat; /* para não repetir a imagem */
     background-attachment: fixed;

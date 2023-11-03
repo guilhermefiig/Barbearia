@@ -1,9 +1,26 @@
 <?php
-
 include('protecao.php');
+include('conexao.php'); // Certifique-se de incluir seu arquivo de conexão
+
+// Obtém o nome do barbeiro logado a partir da variável de sessão
+$barbeiro_logado = $_SESSION['nome'];
+
+// Define o nome da tabela de agendamentos com base no barbeiro logado
+$table_name = "agendamentos"; // Define um valor padrão para evitar erros
+
+if ($barbeiro_logado == 'Cláudio') {
+    $table_name = 'agendamentos';
+} elseif ($barbeiro_logado == 'Cleiton') {
+    $table_name = 'agendamentos2';
+} elseif ($barbeiro_logado == 'exemplo') {
+    $table_name = 'agendamentos3';
+}
+
+// Consulta SQL para recuperar os agendamentos do barbeiro logado
+$sql = "SELECT nome, telefone, barbeiro, data_agend, hora FROM $table_name";
+$result = mysqli_query($conexao, $sql);
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,17 +29,42 @@ include('protecao.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar</title>
     <link rel="shortcut icon" href="imagens/android-chrome-512x512.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <img src="../imagens/barbearia-sem-fundo.png" alt="Logo Barbearia do Claudio">
 
     <div class="quadradoBase2">
-        <h2>Bem vindo, <?php echo $_SESSION['nome'];?> </h2>
+        <h2>Bem vindo, <?php echo $barbeiro_logado;?> </h2>
     </div>
 
     <a href="sair.php">
         <div class="botaoTamanho3">Sair da conta</div>
     </a>
+
+    <!-- Exibir os agendamentos específicos do barbeiro logado -->
+    <div class="quadradoBase2">
+        <h3>Agendamentos:</h3>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Barbeiro</th>
+                <th>Data</th>
+                <th>Hora</th>
+            </tr>
+            <?php
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>" . $row['nome'] . "</td>";
+                echo "<td>" . $row['telefone'] . "</td>";
+                echo "<td>" . $row['barbeiro'] . "</td>";
+                echo "<td>" . $row['data_agend'] . "</td>";
+                echo "<td>" . $row['hora'] . "</td>";
+                echo "</tr>";
+            }
+            ?>
+        </table>
+    </div>
 </body>
 </html>
