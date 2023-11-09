@@ -1,22 +1,29 @@
 <?php
 include('protecao.php');
-include('conexao.php'); // Certifique-se de incluir seu arquivo de conexão
+include('conexao.php');
 
-// Obtém o nome do barbeiro logado a partir da variável de sessão
+
 $barbeiro_logado = $_SESSION['nome'];
 
-// Define o nome da tabela de agendamentos com base no barbeiro logado
-$table_name = "agendamentos"; // Define um valor padrão para evitar erros
+
+$table_name = "agendamentos"; 
 
 if ($barbeiro_logado == 'Cláudio') {
+
     $table_name = 'agendamentos';
-} elseif ($barbeiro_logado == 'Cleiton') {
+} 
+
+elseif ($barbeiro_logado == 'Cleiton') {
+
     $table_name = 'agendamentos2';
-} elseif ($barbeiro_logado == 'exemplo') {
+} 
+
+elseif ($barbeiro_logado == 'exemplo') {
+
     $table_name = 'agendamentos3';
 }
 
-// Consulta SQL para recuperar os agendamentos do barbeiro logado
+
 $sql = "SELECT nome, telefone, barbeiro, data_agend, hora FROM $table_name";
 $result = mysqli_query($conexao, $sql);
 
@@ -42,7 +49,7 @@ $result = mysqli_query($conexao, $sql);
         <div class="botaoTamanho3">Sair da conta</div>
     </a>
 
-    <!-- Exibir os agendamentos específicos do barbeiro logado -->
+    
     <div class="quadradoBase2">
         <h3>Agendamentos:</h3>
         <table>

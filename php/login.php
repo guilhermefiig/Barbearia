@@ -78,7 +78,6 @@ include('conexao.php');
 
             <div class="password-input">
                 <input type="password" name="senha" id="senha" class="entrar" placeholder="Senha" required>
-                <i class="fas fa-eye" id="eye-icon" onclick="togglePasswordVisibility()"></i>
             </div>
 
             <button type="submit" class="botaoTamanho2" onclick="return confirm('Tem certeza que deseja enviar o formulário')">Entrar</button>

@@ -9,28 +9,82 @@ if (isset($_POST['submit'])) {
 
     include_once('conexao.php');
 
-    if($barbeiro == 'claudio'){
-
-        $result = mysqli_query($conexao, "INSERT INTO agendamentos(nome, telefone, barbeiro, data_agend, hora)
-    VALUES ('$nome', '$telefone', '$barbeiro', '$data', '$hora')");
-
+    if ($barbeiro == 'claudio') {
+        $sql_code = "SELECT * FROM agendamentos WHERE data_agend = '$data' AND hora = '$hora'";
+        $result2 = mysqli_query($conexao, $sql_code);
+    
+        if ($result2 && mysqli_num_rows($result2) > 0) {
+            echo "A data e hora selecionadas já estão agendadas. Escolha outra data e hora.";
+        } 
+        
+        else {
+            $insertSql = "INSERT INTO agendamentos(nome, telefone, barbeiro, data_agend, hora)
+            VALUES ('$nome', '$telefone', '$barbeiro', '$data', '$hora')";
+            
+            $insertResult = mysqli_query($conexao, $insertSql);
+    
+            if ($insertResult) {
+                echo "Agendamento realizado com sucesso!";
+            } 
+            
+            else {
+                echo "Erro ao agendar. Tente novamente.";
+            }
+        }
     }
 
-    if($barbeiro == 'cleiton'){
+    else if ($barbeiro == 'cleiton') {
 
-        $result = mysqli_query($conexao, "INSERT INTO agendamentos2(nome, telefone, barbeiro, data_agend, hora)
-    VALUES ('$nome', '$telefone', '$barbeiro', '$data', '$hora')");
+        $sql_code = "SELECT * FROM agendamentos2 WHERE data_agend = '$data' AND hora = '$hora'";
+        $result2 = mysqli_query($conexao, $sql_code);
     
-    }
+        if ($result2 && mysqli_num_rows($result2) > 0) {
+            echo "A data e hora selecionadas já estão agendadas. Escolha outra data e hora.";
+        } 
+        
+        else {
+            $insertSql = "INSERT INTO agendamentos2(nome, telefone, barbeiro, data_agend, hora)
+            VALUES ('$nome', '$telefone', '$barbeiro', '$data', '$hora')";
+            
+            $insertResult = mysqli_query($conexao, $insertSql);
     
+            if ($insertResult) {
+                echo "Agendamento realizado com sucesso!";
+            } 
+            
+            else {
+                echo "Erro ao agendar. Tente novamente.";
+            }
+        }
+    } 
+    
+    else if ($barbeiro == 'exemplo') {
 
-    if($barbeiro == 'exemplo'){
-
-        $result = mysqli_query($conexao, "INSERT INTO agendamentos3(nome, telefone, barbeiro, data_agend, hora)
-    VALUES ('$nome', '$telefone', '$barbeiro', '$data', '$hora')");
+        $sql_code = "SELECT * FROM agendamentos3 WHERE data_agend = '$data' AND hora = '$hora'";
+        $result2 = mysqli_query($conexao, $sql_code);
     
+        if ($result2 && mysqli_num_rows($result2) > 0) {
+            echo "A data e hora selecionadas já estão agendadas. Escolha outra data e hora.";
+        } 
+        
+        else {
+            $insertSql = "INSERT INTO agendamentos3(nome, telefone, barbeiro, data_agend, hora)
+            VALUES ('$nome', '$telefone', '$barbeiro', '$data', '$hora')";
+            
+            $insertResult = mysqli_query($conexao, $insertSql);
+    
+            if ($insertResult) {
+                echo "Agendamento realizado com sucesso!";
+            } 
+            
+            else {
+                echo "Erro ao agendar. Tente novamente.";
+            }
+        }
     }
 }
+
+
 
 ?>
 
@@ -92,12 +146,12 @@ if (isset($_POST['submit'])) {
         function validateForm() {
             var barbeiro = document.forms[0]["barbeiro"].value;
             var hora = document.forms[0]["hora"].value;
-            
+
             if (barbeiro == "" || hora == "") {
                 alert("Por favor, escolha um barbeiro e uma hora antes de enviar o formulário.");
                 return false;
             }
-            
+
             return true;
         }
     </script>
