@@ -97,7 +97,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar</title>
     <link rel="shortcut icon" href="imagens/android-chrome-512x512.png" type="image/x-icon">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../estilos.css">
 </head>
 
 <body>
