@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     
         if ($result2 && mysqli_num_rows($result2) > 0) {
             echo "A data e hora selecionadas já estão agendadas. Escolha outra data e hora.";
-        } 
+        }
         
         else {
             $insertSql = "INSERT INTO agendamentos(nome, telefone, barbeiro, data_agend, hora)
@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
         }
     } 
     
-    else if ($barbeiro == 'exemplo') {
+    else if ($barbeiro == 'leandro') {
 
         $sql_code = "SELECT * FROM agendamentos3 WHERE data_agend = '$data' AND hora = '$hora'";
         $result2 = mysqli_query($conexao, $sql_code);
@@ -96,8 +96,8 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar</title>
-    <link rel="shortcut icon" href="imagens/android-chrome-512x512.png" type="image/x-icon">
-    <link rel="stylesheet" href="../estilos.css">
+    <link rel="shortcut icon" href="../imagens/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -114,7 +114,7 @@ if (isset($_POST['submit'])) {
                 <option value="" selected disabled>Escolha um barbeiro</option>
                 <option value="claudio">Barbeiro Cláudio</option>
                 <option value="cleiton">Barbeiro Cleiton</option>
-                <option value="exemplo">Barbeiro Exemplo</option>
+                <option value="leandro">Barbeiro Leandro</option>
             </select>
 
             <input type="date" name="data" class="agendar" id="data" required>

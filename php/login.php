@@ -1,7 +1,7 @@
 <?php
 include('conexao.php');
 
-    if(isset($_POST['login']) or isset($_POST['senha'])){
+    if(isset($_POST['login']) or isset($_POST['senha'])){   
 
         if(strlen($_POST['login']) == 0){
             echo"Preencha seu login";
@@ -50,22 +50,8 @@ include('conexao.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="shortcut icon" href="imagens/android-chrome-512x512.png" type="image/x-icon">
-    <link rel="stylesheet" href="../estilos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script>
-        function togglePasswordVisibility() {
-            var senhaInput = document.getElementById("senha");
-            var eyeIcon = document.getElementById("eye-icon");
-            if (senhaInput.type === "password") {
-                senhaInput.type = "text";
-                eyeIcon.className = "fas fa-eye-slash";
-            } else {
-                senhaInput.type = "password";
-                eyeIcon.className = "fas fa-eye";
-            }
-        }
-    </script>
+    <link rel="shortcut icon" href="../imagens/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
